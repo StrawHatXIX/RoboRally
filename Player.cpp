@@ -5,7 +5,8 @@
 Player::Player(Cell* pCell, int playerNum) : stepCount(0), health(10), playerNum(playerNum), currDirection(RIGHT)
 {
 	this->pCell = pCell;
-
+	Laser* laser;
+	equippedWeapon = laser;
 	// Make all the needed initialization or validations
 }
 
@@ -33,6 +34,35 @@ int Player::GetHealth()
 	return this->health;
 }
 
+void Player::UseExtendedMemory()
+{
+	ExtendedMemory = true;
+}
+
+void Player::IsHacked()
+{
+	isHacked = true;
+}
+
+void Player::EquipWeapon(Weapon* weapon)
+{
+	equippedWeapon = weapon; // Assign weapon
+}
+
+//void Player::EquipHackDevice(HackDevice* device)
+//{
+//	hasHackDevice = device;
+//}
+
+void Player::UseWeapon()
+{
+	Grid* pGrid;
+
+	if (equippedWeapon)
+		equippedWeapon->apply(pGrid); // Call Fire() polymorphically
+	else
+		std::cout << "No weapon equipped!\n";
+}
 
 Direction  Player::GetDirection() const
 {
@@ -48,7 +78,7 @@ int Player::GetplayerNum() const
 
 bool Player::SetSavedCommands(Command command)
 {
-	if (NumSavedCommands < 5 || (NumSavedCommands == 5 && UsedExtendedMemory))
+	if (NumSavedCommands < 5 || (NumSavedCommands == 5 && ExtendedMemory))
 	{
 		SavedCommands[NumSavedCommands] = command;
 		NumSavedCommands++;
@@ -400,32 +430,6 @@ void Player::Move(Grid* pGrid, Command moveCommands[])
 // - Use the CellPosition class to help you calculate the destination cell using the current cell
 // - Use the Grid class to update pCell
 // - Don't forget to apply game objects at the final destination cell and check for game ending
-
-
-//void Player::SaveCommands(const Command commands[], int NumCommands)
-//{
-//	int maxCommands = (health < 5) ? health : 5;
-//
-//	if (NumCommands > maxCommands)
-//	{
-//		NumCommands = maxCommands;
-//	}
-//
-//	// Clean up any previously saved commands
-//	SavedCommands[0] =
-//
-//	// Allocate new memory for the commands
-//	//SavedCommands = new Command[NumCommands];
-//
-//	// Save the commands
-//	//for (int i = 0; i < NumCommands; i++)
-//	//{
-//	//	SavedCommands[i] = commands[i];
-//	//}
-//
-//	// Update the number of saved commands
-//	NumSavedCommands = NumCommands;
-//}
 
 
 
