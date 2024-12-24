@@ -187,6 +187,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Laser.cpp" />
     <ClCompile Include="LoadGridAction.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="PasteGameObjectAction.cpp" />
@@ -199,6 +200,7 @@
     <ClCompile Include="ToPlayModeAction.cpp" />
     <ClCompile Include="ToWorkshopStoreAction.cpp" />
     <ClCompile Include="WaterPit.cpp" />
+    <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="Workshop.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +248,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Laser.h" />
     <ClInclude Include="LoadGridAction.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="PasteGameObjectAction.h" />
@@ -258,6 +261,7 @@
     <ClInclude Include="ToWorkshopStoreAction.h" />
     <ClInclude Include="UI_Info.h" />
     <ClInclude Include="WaterPit.h" />
+    <ClInclude Include="Weapon.h" />
     <ClInclude Include="Workshop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
