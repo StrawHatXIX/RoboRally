@@ -193,22 +193,54 @@
     <ClCompile Include="AddRotatingGearAction.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="AddAntennaAction.cpp" />
-    <ClCompile Include="AddCommandAction.cpp" />
-    <ClCompile Include="AddDangerZoneAction.cpp" />
-    <ClCompile Include="AddWaterPitAction.cpp" />
-    <ClCompile Include="AddWorkshopEquipmentAction.cpp" />
-    <ClCompile Include="CopyGameObjectAction.cpp" />
-    <ClCompile Include="CutGameObjectAction.cpp" />
-    <ClCompile Include="DeleteGameObjectAction.cpp" />
-    <ClCompile Include="PasteGameObjectAction.cpp" />
-    <ClCompile Include="SaveGridAction.cpp" />
-    <ClCompile Include="LoadGridAction.cpp" />
-    <ClCompile Include="ToDesignModeAction.cpp" />
-    <ClCompile Include="ToPlayModeAction.cpp" />
-    <ClCompile Include="ToWorkshopStoreAction.cpp" />
-    <ClCompile Include="AddWorkshopAction.cpp" />
-    <ClCompile Include="RebootAndRepairAction.cpp" />
+    <ClCompile Include="AddAntennaAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCommandAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddDangerZoneAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddWaterPitAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddWorkshopAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddWorkshopEquipmentAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyGameObjectAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="CutGameObjectAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteGameObjectAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadGridAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="PasteGameObjectAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="RebootAndRepairAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveGridAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ToDesignModeAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ToPlayModeAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ToWorkshopStoreAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -332,21 +364,53 @@
     <ClInclude Include="AddRotatingGearAction.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="AddAntennaAction.h" />
-    <ClInclude Include="AddCommandAction.h" />
-    <ClInclude Include="AddDangerZoneAction.h" />
-    <ClInclude Include="AddWaterPitAction.h" />
-    <ClInclude Include="AddWorkshopEquipmentAction.h" />
-    <ClInclude Include="CopyGameObjectAction.h" />
-    <ClInclude Include="CutGameObjectAction.h" />
-    <ClInclude Include="DeleteGameObjectAction.h" />
-    <ClInclude Include="PasteGameObjectAction.h" />
-    <ClInclude Include="SaveGridAction.h" />
-    <ClInclude Include="LoadGridAction.h" />
-    <ClInclude Include="ToDesignModeAction.h" />
-    <ClInclude Include="ToPlayModeAction.h" />
-    <ClInclude Include="ToWorkshopStoreAction.h" />
-    <ClInclude Include="AddWorkshopAction.h" />
-    <ClInclude Include="RebootAndRepairAction.h" />
+    <ClInclude Include="AddAntennaAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCommandAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddDangerZoneAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddWaterPitAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddWorkshopAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddWorkshopEquipmentAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyGameObjectAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="CutGameObjectAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteGameObjectAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadGridAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PasteGameObjectAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="RebootAndRepairAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveGridAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ToDesignModeAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ToPlayModeAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ToWorkshopStoreAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
