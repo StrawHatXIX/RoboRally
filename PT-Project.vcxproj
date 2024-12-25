@@ -197,6 +197,7 @@
     <ClCompile Include="RebootAndRepairAction.cpp" />
     <ClCompile Include="RotatingGear.cpp" />
     <ClCompile Include="SaveGridAction.cpp" />
+    <ClCompile Include="ShootingAction.cpp" />
     <ClCompile Include="ToDesignModeAction.cpp" />
     <ClCompile Include="ToPlayModeAction.cpp" />
     <ClCompile Include="ToWorkshopStoreAction.cpp" />
@@ -258,6 +259,7 @@
     <ClInclude Include="RebootAndRepairAction.h" />
     <ClInclude Include="RotatingGear.h" />
     <ClInclude Include="SaveGridAction.h" />
+    <ClInclude Include="ShootingAction.h" />
     <ClInclude Include="ToDesignModeAction.h" />
     <ClInclude Include="ToPlayModeAction.h" />
     <ClInclude Include="ToWorkshopStoreAction.h" />

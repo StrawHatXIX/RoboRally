@@ -256,6 +256,9 @@
     <ClCompile Include="ToPlayModeAction.cpp">
       <Filter>Actions\DesignModeActions</Filter>
     </ClCompile>
+    <ClCompile Include="ShootingAction.cpp">
+      <Filter>Actions\GameModeAction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -435,6 +438,9 @@
     </ClInclude>
     <ClInclude Include="ToPlayModeAction.h">
       <Filter>Actions\DesignModeActions</Filter>
+    </ClInclude>
+    <ClInclude Include="ShootingAction.h">
+      <Filter>Actions\GameModeAction</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

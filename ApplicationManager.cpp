@@ -151,19 +151,19 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 
 	case SELECT_COMMAND:
-		pAct = new AddCommandAction(this);
+		//pAct = new AddCommandAction(this);
 		break;
 
 	case EXECUTE_COMMANDS:
-		pAct = new ExecuteCommandAction(this);
+		//pAct = new ExecuteCommandAction(this);
 		break;
 
 	case Reboot_Repair:
-		pAct = new RebootAndRepairAction(this);
+		//pAct = new RebootAndRepairAction(this);
 		break;
 
 	case Use_Consumable:
-		pAct = new UseConsumableAction(this);
+		//pAct = new UseConsumableAction(this);
 		break;
 
 	case TO_DESIGN_MODE:
