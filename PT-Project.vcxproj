@@ -189,6 +189,7 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="LoadGridAction.cpp" />
+    <ClCompile Include="NewGameAction.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="PasteGameObjectAction.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -199,6 +200,7 @@
     <ClCompile Include="ToDesignModeAction.cpp" />
     <ClCompile Include="ToPlayModeAction.cpp" />
     <ClCompile Include="ToWorkshopStoreAction.cpp" />
+    <ClCompile Include="UseConsumableAction.cpp" />
     <ClCompile Include="WaterPit.cpp" />
     <ClCompile Include="Workshop.cpp" />
   </ItemGroup>
@@ -249,6 +251,7 @@
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="LoadGridAction.h" />
+    <ClInclude Include="NewGameAction.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="PasteGameObjectAction.h" />
     <ClInclude Include="Player.h" />
@@ -259,6 +262,7 @@
     <ClInclude Include="ToPlayModeAction.h" />
     <ClInclude Include="ToWorkshopStoreAction.h" />
     <ClInclude Include="UI_Info.h" />
+    <ClInclude Include="UseConsumableAction.h" />
     <ClInclude Include="WaterPit.h" />
     <ClInclude Include="Workshop.h" />
   </ItemGroup>

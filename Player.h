@@ -35,7 +35,7 @@ protected:
 
 
 	// isHacked (to indicate whether the player is blocked to play the round, as a result of the opponent using a hacking device)
-
+	bool isHacked = false;
 
 public:
 
@@ -49,15 +49,25 @@ public:
 	void SetHealth(int h);			// A setter for the health points
 	int GetHealth();				// A getter for the health points
 
-	void EquipLaser(bool);
-	void EquipDoubleLaser(bool);
-
-	void EquipToolkit(bool);
-	void EquipHackDevice(bool);
-
-	void ApplyExtendedMemory(bool);
 
 	// carried laser type (default, double laser)
+
+	//setters and getter necessary for the playmode
+	void EquipLaser(bool);
+	bool LaserEquiped();
+
+	void EquipDoubleLaser(bool);
+	bool DoubleLaserEquiped();
+
+	void EquipToolkit(bool);
+	bool ToolkitEquiped();
+
+
+	void EquipHackDevice(bool);
+	bool HackDeviceEquiped();
+
+	void ApplyExtendedMemory();
+	void ApplyIsHacked();
 
 
 	///TODO: You can add setters and getters for data members here (if needed)

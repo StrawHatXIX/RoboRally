@@ -11,7 +11,7 @@ protected:
 
 public:
 
-	AddCommandAction(ApplicationManager* pApp, Command command);  // Constructor
+	AddCommandAction(ApplicationManager* pApp);  // Constructor
 
 	// ============ Virtual Functions ============
 

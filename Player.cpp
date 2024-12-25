@@ -46,27 +46,55 @@ void Player:: EquipLaser(bool a)
 	Laser = a;
 }
 
+bool Player ::LaserEquiped()
+{
+	return Laser;
+}
+
 void Player::EquipDoubleLaser(bool a)
 {
 	DoubleLaser = a;
 }
 
+bool Player::DoubleLaserEquiped()
+{
+	return DoubleLaser;
+}
+
+
 void Player::EquipToolkit(bool a)
 {
 	HasToolkit = a;
 }
+
+bool Player::ToolkitEquiped()
+{
+	return HasToolkit;
+}
+
 void Player::EquipHackDevice(bool a)
 {
 	HasHackDevice = a;
 }
 
-void Player::ApplyExtendedMemory(bool a)
+bool Player::HackDeviceEquiped()
 {
-	ExtendedMemory = a;
+	return HasHackDevice;
+}
+
+void Player::ApplyExtendedMemory()
+{
+	ExtendedMemory = true;
+}
+
+void Player :: ApplyIsHacked()
+{
+	isHacked = true;
 }
 
 
-Direction  Player::GetDirection() const
+
+Direction Player::GetDirection() const
 {
 	return this->currDirection;
 }
