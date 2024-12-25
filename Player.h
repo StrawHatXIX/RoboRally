@@ -3,10 +3,6 @@
 #include "Grid.h"
 #include "Cell.h"
 
-#include "Laser.h"
-//#include "DoubleLaser.h"
-//#include "HackDevice.h"
-
 
 class Player
 {
@@ -27,18 +23,14 @@ protected:
 
 
 	// owned equipments
-	Weapon* equippedWeapon;
-	//HackDevice* hasHackDevice = { nullptr };
 
 	// carried consumables
-	bool ExtendedMemory = false;
 
 	// carried laser type (default, double laser)
-
+	bool UsedExtendedMemory = false;
 
 
 	// isHacked (to indicate whether the player is blocked to play the round, as a result of the opponent using a hacking device)
-	bool isHacked = false;
 
 
 
@@ -55,12 +47,6 @@ public:
 	void SetHealth(int h);			// A setter for the health points
 	int GetHealth();				// A getter for the health points
 
-	void UseExtendedMemory();
-	void IsHacked();
-
-	void EquipWeapon(Weapon* weapon);
-	//void EquipHackDevice(HackDevice* device);
-	void UseWeapon();
 
 	///TODO: You can add setters and getters for data members here (if needed)
 
