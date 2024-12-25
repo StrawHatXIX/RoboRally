@@ -39,6 +39,8 @@ void ToPlayModeAction::Execute()
 
     Command* availableCommands = pGrid->GetRandomCommand();
 
+    pGrid->StartGame();
+
     // Use Output::CreateCommandsBar to display the commands bar
     pOut->CreateCommandsBar(pPlayer->GetSavedCommands(), maxSavedCommands, availableCommands, maxAvailableCommands);
 

@@ -2,7 +2,6 @@
 
 AddCommandAction::AddCommandAction(ApplicationManager* pApp) : Action(pApp)
 {
-	this->command = command;
 }
 
 void AddCommandAction::ReadActionParameters()
@@ -22,7 +21,9 @@ void AddCommandAction::Execute()
 
 	Player* pPlayer = pGrid->GetCurrentPlayer();
 
-	bool saved = pPlayer->SetSavedCommands(command);
+	pGrid->SelectCommand();
+
+	bool saved = pPlayer->SetSavedCommands(pGrid->SelectCommand());
 
 	if (!saved)
 	{

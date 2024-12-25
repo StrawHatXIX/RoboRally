@@ -378,6 +378,73 @@ void Grid::GetAntennaPos(int& Xpos, int& Ypos)
 	}
 }
 
+void Grid :: StartGame() 
+{
+	CurrentRound = 1;
+	currPlayerNumber = 0;
+	endGame = false;
+	pOut->PrintMessage("Game started! Round 1 begins.");
+	UpdateInterface();
+}
+
+void Grid::PlayRound() 
+{
+	pOut->PrintMessage("Round " + to_string(CurrentRound) + " in progress.");
+	while (!endGame) {
+		NextTurn();
+	}
+	pOut->PrintMessage("Round " + to_string(CurrentRound) + " ended.");
+	CurrentRound++;
+}
+
+
+void Grid :: NextTurn() 
+{
+	Player* currentPlayer = PlayerList[currPlayerNumber];
+	if (currentPlayer) {
+		// Simulate the player's turn logic here
+		pOut->PrintMessage("Player " + to_string(currPlayerNumber + 1) + "'s turn.");
+		// Example: Handle player movement or actions
+	}
+	AdvanceCurrentPlayer();
+}
+
+Command Grid::SelectCommand() {
+	// Display commands and their positions on the UI
+	pOut->PrintMessage("Select a Command:");
+	int x, y;
+
+	Command CommandsArray[] = {
+		NO_COMMAND, MOVE_FORWARD_ONE_STEP, MOVE_BACKWARD_ONE_STEP, MOVE_FORWARD_TWO_STEPS,
+		MOVE_BACKWARD_TWO_STEPS, MOVE_FORWARD_THREE_STEPS, MOVE_BACKWARD_THREE_STEPS,
+		ROTATE_CLOCKWISE, ROTATE_COUNTERCLOCKWISE
+	};
+
+	int CommandCount = sizeof(CommandsArray) / sizeof(CommandsArray[0]);
+	random_device rd;
+	mt19937 gen(rd());
+	shuffle(CommandsArray, CommandsArray + CommandCount, gen);
+
+	// Show random commands in the UI
+	for (int i = 0; i < CommandCount; i++) {
+		string commandLabel = "Command " + to_string(i + 1) + ": " + to_string(CommandsArray[i]);
+		pOut->PrintMessage(commandLabel);
+	}
+
+	// Wait for the player to click
+	pIn->GetPointClicked(x, y);
+
+	// Determine which command was selected based on coordinates
+	int CommandIndex = pIn->GetSelectedCommandIndex();  
+	if (CommandIndex >= 0 && CommandIndex < CommandCount) {
+		return CommandsArray[CommandIndex];
+	}
+
+	return NO_COMMAND;
+}
+
+
+
 Command* Grid::GetRandomCommand() const
 {
 	Command CommandsArray[] = { NO_COMMAND, MOVE_FORWARD_ONE_STEP,MOVE_BACKWARD_ONE_STEP, MOVE_FORWARD_TWO_STEPS,

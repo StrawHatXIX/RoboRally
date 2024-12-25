@@ -493,7 +493,6 @@ void Player::Move(Grid* pGrid, Command moveCommands[])
 //}
 
 
-
 void Player::AppendPlayerInfo(string& playersInfo) const
 {
 	// TODO: Modify the Info as needed

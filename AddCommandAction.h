@@ -4,7 +4,6 @@
 
 class AddCommandAction : public Action
 {
-	Command command;
 protected:
 
 	ApplicationManager* pManager;	// Actions needs ApplicationManager to do their job

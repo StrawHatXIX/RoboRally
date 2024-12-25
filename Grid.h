@@ -22,6 +22,8 @@ class Grid
 	// We make it array of pointers not objects because
 	// there are NO default constructor for class Cell
 
+	int CurrentRound = 0;
+
 	Player* PlayerList[MaxPlayerCount]; // An array of "Pointers" to the Players of the Game (MaxPlayerCount Players)
 	int currPlayerNumber;   // The player number that has the turn to play 
 	// currPlayerNumber is: from 0 to MaxPlayerCount - 1
@@ -90,6 +92,17 @@ public:
 	// We added this function once here because it is used many times by other classes
 
 	void GetAntennaPos(int& Xpos, int& Ypos);
+
+
+	// ========= Round system functions =========
+
+// ========= Implementation =========
+
+	void StartGame();
+	void PlayRound();
+	void NextTurn();
+	Command SelectCommand();
+
 
 	// ========= User Interface Functions =========
 

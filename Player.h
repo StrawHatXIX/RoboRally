@@ -95,6 +95,9 @@ public:
 	// and Applies the Game Object's effect (if any) of the end reached cell 
 	// for example, if the end cell contains a belt, take it
 
+	void TakeTurn();
+
+
 	void SaveCommands(const Command commands[], int NumCommands);
 
 	void AppendPlayerInfo(string& playersInfo) const; // Appends player's info to the input string, 

@@ -29,16 +29,27 @@ int Belt::NumCoveredCells()
 
 int* Belt::CoveredCells()//(Done.S)
 {
-	if (position.HCell() == endCellPos.HCell())//vertical belt
+	if (position.HCell() == endCellPos.HCell()) // vertical belt
 	{
 		int temp = position.VCell() - endCellPos.VCell();
 		int size = (temp > 0) ? (temp + 1) : (-temp + 1);
 		int* Cells = new int[size];
-		for (int i = 0; i < size; i++)
+		if (position.VCell() > endCellPos.VCell()) // looks up, starts from down to up
 		{
-			Cells[i] = position.GetCellNum() + i * 11;
+			for (int i = 0; i < size; i++)
+			{
+				Cells[i] = position.GetCellNum() + i * 11;
+			}
+			return Cells;
 		}
-		return Cells;
+		else
+		{
+			for (int i = 0; i < size; i++)
+			{
+				Cells[i] = position.GetCellNum() - i * 11;
+			}
+			return Cells;
+		}
 	}
 
 	if (position.VCell() == endCellPos.VCell())//horizontal belt
@@ -46,11 +57,23 @@ int* Belt::CoveredCells()//(Done.S)
 		int temp = position.HCell() - endCellPos.HCell();
 		int size = (temp > 0) ? (temp + 1) : (-temp + 1);
 		int* Cells = new int[size];
-		for (int i = 0; i < size; i++)
+
+		if (position.HCell() < endCellPos.HCell()) //fron left to right
 		{
-			Cells[i] = position.GetCellNum() + i;
+			for (int i = 0; i < size; i++)
+			{
+				Cells[i] = position.GetCellNum() + i;
+			}
+			return Cells;
 		}
-		return Cells;
+		else
+		{
+			for (int i = 0; i < size; i++)
+			{
+				Cells[i] = position.GetCellNum() - i;
+			}
+			return Cells;
+		}
 	}
 	return nullptr;
 }
