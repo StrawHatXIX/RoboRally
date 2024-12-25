@@ -11,6 +11,11 @@ CellPosition GameObject::GetPosition() const
 	return position;
 }
 
+void GameObject::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2)
+{
+
+}
+
 GameObject::~GameObject()
 {
 }

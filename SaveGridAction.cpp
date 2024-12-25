@@ -27,16 +27,17 @@ void SaveGridAction::Execute()
 	Output* pOut = pGrid->GetOutput();
 	Input* pIn = pGrid->GetInput();
 
+	pOut->PrintMessage("Enter File Name");
 	string filename = pIn->GetSrting(pOut);
 
 	ofstream outfile(filename);
-
+	outfile.open(filename);
 	pGrid->SaveAll(outfile, FlagType);
-	pGrid->SaveAll(outfile, AntennaType);
 	pGrid->SaveAll(outfile, WaterPitType);
 	pGrid->SaveAll(outfile, DangerZoneType);
 	pGrid->SaveAll(outfile, BeltType);
 	pGrid->SaveAll(outfile, WorkshopType);
+	pGrid->SaveAll(outfile, AntennaType);
 	pGrid->SaveAll(outfile, RotatingGearType);
 
 	outfile.close();

@@ -403,140 +403,161 @@ Command* Grid::GetRandomCommand() const
 
 void Grid::SaveAll(ofstream& outfile, Type X)
 {
-	/*int CellNum = 0;
 	int Count = 0;
-	int Locations[55];
-	int Start_Locations[55];
-	int End_Locations[55];
-	switch (X)
+	int Arr_count = 0;
+	int Locations_1[55]{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+	int Locations_2[55]{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+	for (int i = 0; i < NumVerticalCells; i++)
 	{
-	case 0:
-		for (int i = 0; i < 5; ++i)
+		for (int j = 0; j < NumHorizontalCells; j++)
 		{
-			for (int j = 0; j < 11; ++j)
+			GameObject* Temp = CellList[i][j]->GetGameObject();
+			if (Temp != nullptr)
 			{
-				if (CellList[i][j]->HasFlag() != nullptr)
+				if (X == BeltType && CellList[i][j]->HasBelt() != nullptr)
 				{
-					CellNum = CellList[i][j]->GetCellPosition().GetCellNumFromPosition(CellList[i][j]->GetCellPosition());
-					CellList[i][j]->HasFlag()->Save(outfile, X, CellNum);
+					Locations_1[Arr_count] = Temp->GetPosition().GetCellNumFromPosition(Temp->GetPosition());
+					Arr_count++;
+					Locations_2[Arr_count] = CellList[i][j]->HasBelt()->GetEndPosition().GetCellNumFromPosition(CellList[i][j]->HasBelt()->GetEndPosition());
+					Arr_count++;
+					Count++;
+				}
+				else if (X == RotatingGearType && CellList[i][j]->HasRotatingGear() != nullptr)
+				{
+					Locations_1[Arr_count] = Temp->GetPosition().GetCellNumFromPosition(Temp->GetPosition());
+					Arr_count++;
+					Locations_2[Arr_count] = (CellList[i][j]->HasRotatingGear()->GetisClockWise()) ? 1 : 0;
+					Arr_count++;
+					Count++;
+				}
+				else
+				{
+					Locations_1[Count] = Temp->GetPosition().GetCellNumFromPosition(Temp->GetPosition());
+					Count++;
 				}
 			}
 		}
-		break;
-	case 1:
-		for (int i = 0; i < 5; ++i)
+	}
+	for (int i = 0; i < NumVerticalCells; i++)
+	{
+		for (int j = 0; j < NumHorizontalCells; j++)
 		{
-			for (int j = 0; j < 11; ++j)
+			GameObject* Temp = CellList[i][j]->GetGameObject();
+			if (Temp != nullptr)
 			{
-				if (CellList[i][j]->HasAntenna() != nullptr)
+				switch (X)
 				{
-					CellNum = CellList[i][j]->GetCellPosition().GetCellNumFromPosition(CellList[i][j]->GetCellPosition());
-					CellList[i][j]->HasAntenna()->Save(outfile, X, CellNum);
+				case FlagType:
+					if (CellList[i][j]->HasFlag() != nullptr)
+						CellList[i][j]->HasFlag()->Save(outfile, Count, Locations_1, Locations_2);
+					break;
+				case AntennaType:
+					if (CellList[i][j]->HasAntenna() != nullptr)
+						CellList[i][j]->HasAntenna()->Save(outfile, Count, Locations_1, Locations_2);
+					break;
+				case WaterPitType:
+					if (CellList[i][j]->HasWaterPit() != nullptr)
+						CellList[i][j]->HasWaterPit()->Save(outfile, Count, Locations_1, Locations_2);
+					break;
+				case DangerZoneType:
+					if (CellList[i][j]->HasDangerZone() != nullptr)
+						CellList[i][j]->HasDangerZone()->Save(outfile, Count, Locations_1, Locations_2);
+					break;
+				case WorkshopType:
+					if (CellList[i][j]->HasWorkshop() != nullptr)
+						CellList[i][j]->HasWorkshop()->Save(outfile, Count, Locations_1, Locations_2);
+					break;
+				case BeltType:
+					if (CellList[i][j]->HasBelt() != nullptr)
+						CellList[i][j]->HasBelt()->Save(outfile, Count, Locations_1, Locations_2);
+					break;
+				case RotatingGearType:
+					if (CellList[i][j]->HasRotatingGear() != nullptr)
+						CellList[i][j]->HasRotatingGear()->Save(outfile, Count, Locations_1, Locations_2);
+					break;
 				}
-			}
-		}
-		break;
-	case 2:
-		for (int i = 0; i < 5; ++i)
-		{
-			for (int j = 0; j < 11; ++j)
-			{
-				if (CellList[i][j]->HasWaterPit() != nullptr)
-				{
-					CellNum = CellList[i][j]->GetCellPosition().GetCellNumFromPosition(CellList[i][j]->GetCellPosition());
-					CellList[i][j]->HasWaterPit()->Save(outfile, X, CellNum, Count, Locations);
-				}
-			}
-		}
-		outfile << Count << endl;
-		for (int i = 0; i < Count; i++)
-		{
-			outfile << Locations[i] << " " << endl;
-		}
-		outfile << "----------" << endl;
-		break;
-	case 3:
-		for (int i = 0; i < 5; ++i)
-		{
-			for (int j = 0; j < 11; ++j)
-			{
-				if (CellList[i][j]->HasDangerZone() != nullptr)
-				{
-					CellNum = CellList[i][j]->GetCellPosition().GetCellNumFromPosition(CellList[i][j]->GetCellPosition());
-					CellList[i][j]->HasDangerZone()->Save(outfile, X, CellNum, Count, Locations);
-				}
-			}
-		}
-		outfile << Count << endl;
-		for (int i = 0; i < Count; i++)
-		{
-			outfile << Locations[i] << " " << endl;
-		}
-		outfile << "----------" << endl;
-		break;
-	case 4:
-		for (int i = 0; i < 5; ++i)
-		{
-			for (int j = 0; j < 11; ++j)
-			{
-				if (CellList[i][j]->HasBelt() != nullptr)
-				{
-					int SCell = CellList[i][j]->GetCellPosition().GetCellNumFromPosition(CellList[i][j]->GetCellPosition());
-					int ECell = CellList[i][j]->HasBelt()->GetEndPosition().GetCellNumFromPosition(CellList[i][j]->HasBelt()->GetEndPosition());
-					CellList[i][j]->HasBelt()->Save(outfile, X, SCell, ECell, Count, Start_Locations, End_Locations);
 
-				}
 			}
 		}
-		outfile << Count << endl;
-		for (int i = 0; i < Count; i++)
-		{
-			outfile << Start_Locations[i] << " " << End_Locations[i] << endl;
-		}
-		outfile << "----------" << endl;
-		break;
-	case 5:
-		for (int i = 0; i < 5; ++i)
-		{
-			for (int j = 0; j < 11; ++j)
-			{
-				if (CellList[i][j]->HasWorkshop() != nullptr)
-				{
-					CellNum = CellList[i][j]->GetCellPosition().GetCellNumFromPosition(CellList[i][j]->GetCellPosition());
-					CellList[i][j]->HasWorkshop()->Save(outfile, X, CellNum, Count, Locations);
-				}
-			}
-		}
-		outfile << Count << endl;
-		for (int i = 0; i < Count; i++)
-		{
-			outfile << Locations[i] << " " << endl;
-		}
-		outfile << "----------" << endl;
-		break;
-	case 6:
-		bool clock[55]{ 0 };
-		for (int i = 0; i < 5; ++i)
-		{
-			for (int j = 0; j < 11; ++j)
-			{
-				if (CellList[i][j]->HasRotatingGear() != nullptr)
-				{
-					CellNum = CellList[i][j]->GetCellPosition().GetCellNumFromPosition(CellList[i][j]->GetCellPosition());
-					bool rotation = CellList[i][j]->HasRotatingGear()->GetisClockWise();
-					CellList[i][j]->HasRotatingGear()->Save(outfile, X, CellNum, Count, Locations, clock, rotation);
-				}
-			}
-		}
-		outfile << Count << endl;
-		for (int i = 0; i < Count; i++)
-		{
-			outfile << Locations[i] << " " << clock[i] << endl;
-		}
-		outfile << "----------" << endl;
-		break;
-	}*/
+	}
 }
+
+void Grid::LoadAll(std::ifstream& infile, Type X)
+{
+	int Count;
+	infile >> Count;
+
+	int Locations_1[55];
+	int Locations_2[55];
+
+	for (int i = 0; i < Count; ++i)
+	{
+		infile >> Locations_1[i];
+	}
+
+	if (X == BeltType || X == RotatingGearType)
+	{
+		for (int i = 0; i < Count; ++i)
+		{
+			infile >> Locations_2[i];
+		}
+	}
+
+	for (int i = 0; i < Count; ++i)
+	{
+		int cellNum = Locations_1[i];
+		CellPosition pos = CellPosition::GetCellPositionFromNum(cellNum);
+		GameObject* obj = nullptr;
+
+		switch (X)
+		{
+		case FlagType:
+			obj = new Flag(pos);
+			break;
+		case AntennaType:
+			obj = new Antenna(pos);
+			break;
+		case WaterPitType:
+			obj = new WaterPit(pos);
+			break;
+		case DangerZoneType:
+			obj = new DangerZone(pos);
+			break;
+		case WorkshopType:
+			obj = new Workshop(pos);
+			break;
+		case BeltType:
+			int endCellNum = Locations_2[i];
+			CellPosition endPos = CellPosition::GetCellPositionFromNum(endCellNum);
+			Belt* belt = new Belt(pos, endPos);
+			obj = belt;
+			break;
+		case RotatingGearType:
+			bool isClockwise = Locations_2[i] == 1;
+			RotatingGear* gear = new RotatingGear(pos, isClockwise);
+			obj = gear;
+			break;
+		}
+
+
+		CellList[pos.VCell()][pos.HCell()]->SetGameObject(obj);
+	}
+}
+
+void Grid::ResetGrid()
+{
+	for (int i = 0; i < NumVerticalCells; i++)
+	{
+		for (int j = 0; j < NumHorizontalCells; j++)
+		{
+			if ((i != 4 && j != 0) || (i != 0 && j != 10))
+			{
+				RemoveObjectFromCell(CellList[i][j]->GetCellPosition());
+			}
+		}
+	}
+}
+
 
 
 Grid::~Grid()

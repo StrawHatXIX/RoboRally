@@ -95,10 +95,12 @@ public:
 
 	Command* GetRandomCommand() const;
 
+	void ResetGrid();
 
 	// ========= Save Functions =========
 
 	void SaveAll(ofstream& outfile, Type X);
+	void LoadAll(ifstream& infile, Type X);
 
 	~Grid(); // A destructor for any needed deallcations
 };

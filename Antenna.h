@@ -11,7 +11,7 @@ public:
 
 	virtual void Apply(Grid* pGrid, Player* pPlayer); // Applys the effect of the antenna by deciding the players turns
 
-
+	virtual void Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2);
 
 	virtual ~Antenna();
 };

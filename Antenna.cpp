@@ -58,6 +58,10 @@ void Antenna::Apply(Grid* pGrid, Player* pPlayer)
     pOut->PrintMessage("Player " + to_string(currentPlayer + 1) + " will play first");
 }
 
+void Antenna::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2)
+{
+    outfile << Count << endl << Locations_1[Count - 1] << endl;
+}
 
 Antenna::~Antenna()
 {

@@ -9,7 +9,7 @@ public:
 
 	virtual void Apply(Grid* pGrid, Player* pPlayer); // Applys the effect of the danger zone by reducing the robot's health by 1
 
-
+	virtual void Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2);
 
 	virtual ~DangerZone();
 };

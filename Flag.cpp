@@ -30,6 +30,11 @@ void Flag::Apply(Grid* pGrid, Player* pPlayer)
 	pGrid->SetEndGame(true);
 }
 
+void Flag::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2)
+{
+	outfile << Count << endl << Locations_1[Count - 1] << endl;
+}
+
 Flag::~Flag()
 {
 

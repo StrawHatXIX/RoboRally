@@ -41,6 +41,14 @@ void DangerZone::Apply(Grid* pGrid, Player* pPlayer)
 
 }
 
+void DangerZone::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2)
+{
+	outfile << Count << endl;
+	for (int i = 0; i < Count; i++)
+	{
+		outfile << Locations_1[i] << endl;
+	}
+}
 
 DangerZone::~DangerZone()
 {

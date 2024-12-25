@@ -34,6 +34,9 @@ public:
 	                                                       // For example, applying a belt is by moving player to the 
 														   // end of the belt, and so on
 
+	virtual void Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2);
+
+
 	// The following functions are examples of what should be supported by the GameObject class
 	// They should be overridden by each inherited class
 

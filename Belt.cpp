@@ -97,6 +97,14 @@ CellPosition Belt::GetEndPosition() const
 	return endCellPos;
 }
 
+void Belt::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2)
+{
+	outfile << Count << endl;
+	for (int i = 0; i < Count; i++)
+	{
+		outfile << Locations_1[i] << " " << Locations_2[i] << endl;
+	}
+}
 
 Belt::~Belt()
 {

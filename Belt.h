@@ -17,6 +17,9 @@ public:
 	virtual void Apply(Grid* pGrid, Player* pPlayer); // Applys the effect of the belt by moving player to belt's end cell
 
 	CellPosition GetEndPosition() const; // A getter for the endCellPos data member
+
+	virtual void Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2);
+
 	virtual ~Belt();
 };
 

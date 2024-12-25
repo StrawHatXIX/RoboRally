@@ -45,7 +45,14 @@ void WaterPit::Apply(Grid* pGrid, Player* pPlayer)
 	// 3- Update the players info which is displayed (check Grid class and decide which function to use)
 }
 
-
+void WaterPit::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2)
+{
+	outfile << Count << endl;
+	for (int i = 0; i < Count; i++)
+	{
+		outfile << Locations_1[i] << endl;
+	}
+}
 
 WaterPit::~WaterPit()
 {
