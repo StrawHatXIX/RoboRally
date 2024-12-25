@@ -508,6 +508,9 @@ void Grid::LoadAll(std::ifstream& infile, Type X)
 		int cellNum = Locations_1[i];
 		CellPosition pos = CellPosition::GetCellPositionFromNum(cellNum);
 		GameObject* obj = nullptr;
+		int endCellNum = 0;
+		CellPosition endPos;
+		Belt* belt;
 
 		switch (X)
 		{
@@ -527,9 +530,9 @@ void Grid::LoadAll(std::ifstream& infile, Type X)
 			obj = new Workshop(pos);
 			break;
 		case BeltType:
-			int endCellNum = Locations_2[i];
-			CellPosition endPos = CellPosition::GetCellPositionFromNum(endCellNum);
-			Belt* belt = new Belt(pos, endPos);
+			endCellNum = Locations_2[i];
+			endPos = CellPosition::GetCellPositionFromNum(endCellNum);
+			belt = new Belt(pos, endPos);
 			obj = belt;
 			break;
 		case RotatingGearType:
