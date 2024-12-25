@@ -48,7 +48,7 @@ void Antenna::Apply(Grid* pGrid, Player* pPlayer)
         currentPlayer = 1;  // Player 2 is closer
     }
     else {
-        currentPlayer = 0;  
+        currentPlayer = 0;  // Tie, Player 1 plays first by default
     }
 
     //Update the turn order in the grid

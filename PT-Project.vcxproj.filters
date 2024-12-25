@@ -25,8 +25,8 @@
     <Filter Include="GUIClasses">
       <UniqueIdentifier>{03fd4e0d-92e0-4271-bb9b-d6e9f21ec35f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Actions\PlayModeActions">
-      <UniqueIdentifier>{4aa2c349-4532-4623-a2c4-c0b819f84e88}</UniqueIdentifier>
+    <Filter Include="Actions\GameModeAction">
+      <UniqueIdentifier>{70d6471a-2d7b-4cc9-9c48-a6936a55ee42}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +199,6 @@
     <ClCompile Include="AddAntennaAction.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="AddCommandAction.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
     <ClCompile Include="AddDangerZoneAction.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
@@ -244,11 +241,11 @@
     <ClCompile Include="ToWorkshopStoreAction.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>Player</Filter>
+    <ClCompile Include="AddCommandAction.cpp">
+      <Filter>Actions\GameModeAction</Filter>
     </ClCompile>
-    <ClCompile Include="Laser.cpp">
-      <Filter>Player</Filter>
+    <ClCompile Include="ExecuteCommandAction.cpp">
+      <Filter>Actions\GameModeAction</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -376,9 +373,6 @@
     <ClInclude Include="AddAntennaAction.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="AddCommandAction.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
     <ClInclude Include="AddDangerZoneAction.h">
       <Filter>Actions</Filter>
     </ClInclude>
@@ -421,11 +415,11 @@
     <ClInclude Include="ToWorkshopStoreAction.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>Player</Filter>
+    <ClInclude Include="AddCommandAction.h">
+      <Filter>Actions\GameModeAction</Filter>
     </ClInclude>
-    <ClInclude Include="Laser.h">
-      <Filter>Player</Filter>
+    <ClInclude Include="ExecuteCommandAction.h">
+      <Filter>Actions\GameModeAction</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

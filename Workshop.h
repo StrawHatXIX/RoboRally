@@ -9,8 +9,7 @@ public:
 
 	virtual void Apply(Grid* pGrid, Player* pPlayer); // Applys the effect of the workshop
 
-	void Save(ofstream& outfile, Type X, int& CellNum, int& Count, int Locations[]);
-
+	
 
 	~Workshop();
 };

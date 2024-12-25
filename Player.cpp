@@ -5,8 +5,15 @@
 Player::Player(Cell* pCell, int playerNum) : stepCount(0), health(10), playerNum(playerNum), currDirection(RIGHT)
 {
 	this->pCell = pCell;
-	Laser* laser;
-	equippedWeapon = laser;
+	bool Laser = true;
+	bool DoubleLaser = false;
+
+	// carried consumables
+	bool HasToolkit = false;
+	bool HasHackDevice = false;
+
+	// carried laser type (default, double laser)
+	bool ExtendedMemory = false;
 	// Make all the needed initialization or validations
 }
 
@@ -34,35 +41,30 @@ int Player::GetHealth()
 	return this->health;
 }
 
-void Player::UseExtendedMemory()
+void Player:: EquipLaser(bool a)
 {
-	ExtendedMemory = true;
+	Laser = a;
 }
 
-void Player::IsHacked()
+void Player::EquipDoubleLaser(bool a)
 {
-	isHacked = true;
+	DoubleLaser = a;
 }
 
-void Player::EquipWeapon(Weapon* weapon)
+void Player::EquipToolkit(bool a)
 {
-	equippedWeapon = weapon; // Assign weapon
+	HasToolkit = a;
+}
+void Player::EquipHackDevice(bool a)
+{
+	HasHackDevice = a;
 }
 
-//void Player::EquipHackDevice(HackDevice* device)
-//{
-//	hasHackDevice = device;
-//}
-
-void Player::UseWeapon()
+void Player::ApplyExtendedMemory(bool a)
 {
-	Grid* pGrid;
-
-	if (equippedWeapon)
-		equippedWeapon->apply(pGrid); // Call Fire() polymorphically
-	else
-		std::cout << "No weapon equipped!\n";
+	ExtendedMemory = a;
 }
+
 
 Direction  Player::GetDirection() const
 {
@@ -430,6 +432,32 @@ void Player::Move(Grid* pGrid, Command moveCommands[])
 // - Use the CellPosition class to help you calculate the destination cell using the current cell
 // - Use the Grid class to update pCell
 // - Don't forget to apply game objects at the final destination cell and check for game ending
+
+
+//void Player::SaveCommands(const Command commands[], int NumCommands)
+//{
+//	int maxCommands = (health < 5) ? health : 5;
+//
+//	if (NumCommands > maxCommands)
+//	{
+//		NumCommands = maxCommands;
+//	}
+//
+//	// Clean up any previously saved commands
+//	SavedCommands[0] =
+//
+//	// Allocate new memory for the commands
+//	//SavedCommands = new Command[NumCommands];
+//
+//	// Save the commands
+//	//for (int i = 0; i < NumCommands; i++)
+//	//{
+//	//	SavedCommands[i] = commands[i];
+//	//}
+//
+//	// Update the number of saved commands
+//	NumSavedCommands = NumCommands;
+//}
 
 
 
