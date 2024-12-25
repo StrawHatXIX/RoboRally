@@ -5,7 +5,15 @@
 Player::Player(Cell* pCell, int playerNum) : stepCount(0), health(10), playerNum(playerNum), currDirection(RIGHT)
 {
 	this->pCell = pCell;
+	bool Laser = true;
+	bool DoubleLaser = false;
 
+	// carried consumables
+	bool HasToolkit = false;
+	bool HasHackDevice = false;
+
+	// carried laser type (default, double laser)
+	bool ExtendedMemory = false;
 	// Make all the needed initialization or validations
 }
 
@@ -33,8 +41,60 @@ int Player::GetHealth()
 	return this->health;
 }
 
+void Player:: EquipLaser(bool a)
+{
+	Laser = a;
+}
 
-Direction  Player::GetDirection() const
+bool Player ::LaserEquiped()
+{
+	return Laser;
+}
+
+void Player::EquipDoubleLaser(bool a)
+{
+	DoubleLaser = a;
+}
+
+bool Player::DoubleLaserEquiped()
+{
+	return DoubleLaser;
+}
+
+
+void Player::EquipToolkit(bool a)
+{
+	HasToolkit = a;
+}
+
+bool Player::ToolkitEquiped()
+{
+	return HasToolkit;
+}
+
+void Player::EquipHackDevice(bool a)
+{
+	HasHackDevice = a;
+}
+
+bool Player::HackDeviceEquiped()
+{
+	return HasHackDevice;
+}
+
+void Player::ApplyExtendedMemory()
+{
+	ExtendedMemory = true;
+}
+
+void Player :: ApplyIsHacked()
+{
+	isHacked = true;
+}
+
+
+
+Direction Player::GetDirection() const
 {
 	return this->currDirection;
 }
@@ -48,7 +108,7 @@ int Player::GetplayerNum() const
 
 bool Player::SetSavedCommands(Command command)
 {
-	if (NumSavedCommands < 5 || (NumSavedCommands == 5 && UsedExtendedMemory))
+	if (NumSavedCommands < 5 || (NumSavedCommands == 5 && ExtendedMemory))
 	{
 		SavedCommands[NumSavedCommands] = command;
 		NumSavedCommands++;

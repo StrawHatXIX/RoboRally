@@ -1,6 +1,6 @@
 #include "AddCommandAction.h"
 
-AddCommandAction::AddCommandAction(ApplicationManager* pApp, Command command) : Action(pApp)
+AddCommandAction::AddCommandAction(ApplicationManager* pApp) : Action(pApp)
 {
 	this->command = command;
 }

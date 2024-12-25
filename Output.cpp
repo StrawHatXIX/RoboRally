@@ -841,15 +841,15 @@ void Output::DrawAntenna(const CellPosition& cellPos) const
 	}
 	// TODO (Done.S): Draw the antenna image in the cell
 	// it is a triangle (direction up) with 6 arcs (each 2 are symmetric) whose center is the upper point
-	int cellStartX = GetCellStartX(cellPos);
+	int cellStartX = GetCellStartX(cellPos); // Gets the X coordinate of the upper left corner of the passed cellpos
 	int cellStartY = GetCellStartY(cellPos);
 
 	int x1 = cellStartX + (UI.CellWidth / 8) * 3;
-	int y1 = cellStartX + (UI.CellHeight / 8) * 7;
+	int y1 = cellStartY + (UI.CellHeight / 8) * 7;
 	int x2 = cellStartX + (UI.CellWidth / 8) * 5;
 	int y2 = y1;
-	int x3 = cellStartX + ((UI.CellWidth / 2) - 1);
-	int y3 = cellStartX + (UI.CellHeight / 8) * 3;
+	int x3 = cellStartX + ((UI.CellWidth / 2));
+	int y3 = cellStartY + (UI.CellHeight / 8) * 3;
 
 	pWind->SetBrush(BLACK);
 	pWind->SetPen(WHITE);

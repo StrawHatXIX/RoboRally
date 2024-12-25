@@ -18,6 +18,9 @@
 #include "ToDesignModeAction.h" //game mode buttons
 
 #include "AddCommandAction.h"
+#include "ExecuteCommandAction.h"
+#include "RebootAndRepairAction.h"
+#include "UseConsumableAction.h"
 
 #include "ToWorkshopStoreAction.h"//workshop buttons
 #include "RebootAndRepairAction.h"
@@ -139,46 +142,70 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pAct = new ToPlayModeAction(this);				// temporary till you made its action class (CHANGE THIS LATTER)
 		break;
 
+
+		//SELECT_COMMAND,		
+		//	EXECUTE_COMMANDS,	
+		//	Use_Consumable,
+		//	New_Game,
+		//	TO_DESIGN_MODE,
+
+
+	case SELECT_COMMAND:
+		pAct = new AddCommandAction(this);
+		break;
+
+	case EXECUTE_COMMANDS:
+		pAct = new ExecuteCommandAction(this);
+		break;
+
+	case Reboot_Repair:
+		pAct = new RebootAndRepairAction(this);
+		break;
+
+	case Use_Consumable:
+		pAct = new UseConsumableAction(this);
+		break;
+
 	case TO_DESIGN_MODE:
-		// create an object of ToDesignModeAction here		//TODO:
-		pAct = new ToDesignModeAction(this);				// temporary till you made its action class (CHANGE THIS LATTER)
+		// create an object of ToDesignModeAction here		
+		pAct = new ToDesignModeAction(this);				
 		break;
 
-	case NO_COMMAND_ACTION:
-		pAct = new AddCommandAction(this, NO_COMMAND);
-		break;
+	//case NO_COMMAND_ACTION:
+	//	pAct = new AddCommandAction(this, NO_COMMAND);
+	//	break;
 
-	case MOVE_FORWARD_ONCE_ACTION:
-		pAct = new AddCommandAction(this, MOVE_FORWARD_ONE_STEP);
-		break;
+	//case MOVE_FORWARD_ONCE_ACTION:
+	//	pAct = new AddCommandAction(this, MOVE_FORWARD_ONE_STEP);
+	//	break;
 
-	case MOVE_BACKWARD_ONCE_ACTION:
-		pAct = new AddCommandAction(this, MOVE_BACKWARD_ONE_STEP);
-		break;
+	//case MOVE_BACKWARD_ONCE_ACTION:
+	//	pAct = new AddCommandAction(this, MOVE_BACKWARD_ONE_STEP);
+	//	break;
 
-	case MOVE_FORWARD_TWICE_ACTION:
-		pAct = new AddCommandAction(this, MOVE_FORWARD_TWO_STEPS);
-		break;
+	//case MOVE_FORWARD_TWICE_ACTION:
+	//	pAct = new AddCommandAction(this, MOVE_FORWARD_TWO_STEPS);
+	//	break;
 
-	case MOVE_BACKWARD_TWICE_ACTION:
-		pAct = new AddCommandAction(this, MOVE_BACKWARD_TWO_STEPS);
-		break;
+	//case MOVE_BACKWARD_TWICE_ACTION:
+	//	pAct = new AddCommandAction(this, MOVE_BACKWARD_TWO_STEPS);
+	//	break;
 
-	case MOVE_FORWARD_THRICE_ACTION:
-		pAct = new AddCommandAction(this, MOVE_FORWARD_THREE_STEPS);
-		break;
+	//case MOVE_FORWARD_THRICE_ACTION:
+	//	pAct = new AddCommandAction(this, MOVE_FORWARD_THREE_STEPS);
+	//	break;
 
-	case MOVE_BACKWARD_THRICE_ACTION:
-		pAct = new AddCommandAction(this, MOVE_BACKWARD_THREE_STEPS);
-		break;
+	//case MOVE_BACKWARD_THRICE_ACTION:
+	//	pAct = new AddCommandAction(this, MOVE_BACKWARD_THREE_STEPS);
+	//	break;
 
-	case ROTATE_CLOCKWISE_ACTION:
-		pAct = new AddCommandAction(this, ROTATE_CLOCKWISE);
-		break;
+	//case ROTATE_CLOCKWISE_ACTION:
+	//	pAct = new AddCommandAction(this, ROTATE_CLOCKWISE);
+	//	break;
 
-	case ROTATE_ANITCLOCKWISE_ACTION:
-		pAct = new AddCommandAction(this, ROTATE_COUNTERCLOCKWISE);
-		break;
+	//case ROTATE_ANITCLOCKWISE_ACTION:
+	//	pAct = new AddCommandAction(this, ROTATE_COUNTERCLOCKWISE);
+	//	break;
 
 	case TO_WORKSHOP_STORE:
 		pAct = new ToWorkshopStoreAction(this);

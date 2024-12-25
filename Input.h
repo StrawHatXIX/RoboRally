@@ -38,10 +38,10 @@ public:
 	// This function is needed only in Design Mode
 	// If the click is NOT on a cellposition, (-1,-1) is returned
 	// This function is like GetPointClicked but returns Cell Position NOT Real Coordinates
-//###############################
-// In the play mode, Wait for the user to select a command from the available commands
-// shown in the commands bar and return the clicked command index (0 is the first command, 1 is the second, and so on)
-// will return -1 if the click was NOT on one of the commands
+    //###############################
+    // In the play mode, Wait for the user to select a command from the available commands
+    // shown in the commands bar and return the clicked command index (0 is the first command, 1 is the second, and so on)
+    // will return -1 if the click was NOT on one of the commands
 	int GetSelectedCommandIndex() const;
 	/*Command GetSelectedCommand() const;*/ //idea for later, need thinking
 };
