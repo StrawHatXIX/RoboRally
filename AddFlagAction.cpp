@@ -29,6 +29,7 @@ void AddFlagAction::ReadActionParameters()
 		return;
 	}
 
+
 	// 2- Read the flagPos
 	pOut->PrintMessage("New Flag: Click on its Start Cell ...");
 	flagPos = pIn->GetCellClicked();
@@ -53,11 +54,25 @@ void AddFlagAction::Execute()
 
 	// 2-get a pointer to the Grid from the ApplicationManager
 	Grid* pGrid = pManager->GetGrid();
+	Output* pOut = pGrid->GetOutput();
+	Input* pIn = pGrid->GetInput();
 
+	bool added;
 
 	// 3-Add the flag object to the GameObject of its Cell:
-	bool added = pGrid->AddObjectToCell(pFlag);
 
+	if (pGrid->CheckLastBeltCell(flagPos))
+	{
+		int x, y; //dummy variables just for giving the user the chance to read the error message until they decide to click anywhere
+		pOut->PrintMessage("This cell is end of belt, Click anywhere to continue....");
+		pIn->GetPointClicked(x, y);
+		pOut->ClearStatusBar();
+		added = false;
+	}
+	else
+	{
+		added = pGrid->AddObjectToCell(pFlag);
+	}
 
 	// 4-Check if the flag was added and print an errror message if flag couldn't be added
 	if (!added && pGrid->FlagOnGrid() == false)

@@ -42,7 +42,13 @@ void AddBeltAction::Execute()
 
 	Grid * pGrid = pManager->GetGrid(); // We get a pointer to the Grid from the ApplicationManager
 
-										
+	bool Overlapping = pGrid->AnyBeltOverlap(pBelt); //false if no overlappng, true if there is any
+	if (Overlapping)
+	{
+		pGrid->PrintErrorMessage("Error: Overlapping Belts detected! Click to continue ...");
+		return;
+	}
+
 	bool added = pGrid->AddObjectToCell(pBelt);
 
 	// if the GameObject cannot be added

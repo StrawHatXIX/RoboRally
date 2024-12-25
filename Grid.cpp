@@ -174,6 +174,29 @@ bool Grid::FlagOnGrid() const //checks if the grid alread has a flag, I used it 
 }
 
 
+bool Grid::CheckLastBeltCell(CellPosition flagCell) const
+{
+	bool isCellofEndBelt = false;
+	for (int i = 0; i < NumVerticalCells; i++)
+	{
+		for (int j = 0; j < NumHorizontalCells; j++)
+		{
+			Belt* temp = CellList[i][j]->HasBelt();
+			if (temp) // doesn't point to null
+			{
+				if (temp->GetEndPosition().HCell() == flagCell.HCell() && temp->GetEndPosition().VCell() == flagCell.VCell())
+				{
+					isCellofEndBelt = true;
+					break;
+				}
+			}
+		}
+		if (isCellofEndBelt == true)
+			break;
+	}
+	return isCellofEndBelt;
+}
+
 bool Grid::AntennaOnGrid() const //checks if the grid alread has an antenna, I used it in antenna action
 {
 	bool found = false;
