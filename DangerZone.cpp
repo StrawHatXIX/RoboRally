@@ -50,6 +50,16 @@ void DangerZone::Save(ofstream& outfile, int Count, int* Locations_1, int* Locat
 	}
 }
 
+GameObject* DangerZone::Load(const CellPosition& pos, std::ifstream& infile)
+{
+	// Example: If DangerZone needs an additional intensity value
+	int dangerLevel;
+	infile >> dangerLevel; // Read danger level (if needed)
+
+	return new DangerZone(pos);
+}
+
+
 DangerZone::~DangerZone()
 {
 }

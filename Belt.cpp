@@ -106,6 +106,14 @@ void Belt::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2
 	}
 }
 
+GameObject* Belt::Load(const CellPosition& startPos, const CellPosition& endPos, std::ifstream& infile)
+{
+	// No additional data is needed beyond start and end positions
+	return new Belt(startPos, endPos);
+}
+
+
+
 Belt::~Belt()
 {
 }

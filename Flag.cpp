@@ -35,6 +35,13 @@ void Flag::Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2
 	outfile << Count << endl << Locations_1[Count - 1] << endl;
 }
 
+GameObject* Flag::Load(const CellPosition& pos, std::ifstream& infile)
+{
+	// No additional data is required for a Flag
+	return new Flag(pos);
+}
+
+
 Flag::~Flag()
 {
 

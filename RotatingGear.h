@@ -11,6 +11,7 @@ public:
 	bool GetisClockWise() const; // Getter for the direction
 	void setrevDirection();// setter 
 	virtual void Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2);
+	/*virtual GameObject* Load(const CellPosition& pos, bool isClockwise, std::ifstream& infile);*/
 	virtual ~RotatingGear();
 };
 

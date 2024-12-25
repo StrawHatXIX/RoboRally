@@ -33,6 +33,14 @@ void Workshop::Save(ofstream& outfile, int Count, int* Locations_1, int* Locatio
 	}
 }
 
+GameObject* Workshop::Load(const CellPosition& pos, std::ifstream& infile)
+{
+	// Example: If Workshop requires additional parameters like repair time
+	int repairCost;
+	infile >> repairCost; // Read workshop repair cost (if needed)
+
+	return new Workshop(pos);
+}
 
 
 Workshop::~Workshop()

@@ -20,6 +20,8 @@ public:
 
 	virtual void Save(ofstream& outfile, int Count, int* Locations_1, int* Locations_2);
 
+	virtual GameObject* Load(const CellPosition& startPos, const CellPosition& endPos, std::ifstream& infile);
+
 	virtual ~Belt();
 };
 
