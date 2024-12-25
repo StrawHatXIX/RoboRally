@@ -150,6 +150,13 @@ int Grid::GetCurrPlayer()
 	return currPlayerNumber;
 }
 
+GameObject* Grid::GetGameObjectGrid(CellPosition* Pos) 
+{
+	if (Pos->IsValidCell())
+	{
+		return CellList[Pos->VCell()][Pos->HCell()]->GetGameObject();
+	}
+}
 
 // ========= Other Getters =========
 

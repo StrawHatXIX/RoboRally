@@ -4,6 +4,7 @@ DeleteGameObjectAction::DeleteGameObjectAction(ApplicationManager* pApp) : Actio
 }
 void DeleteGameObjectAction::ReadActionParameters()
 {
+	
 	Grid* pGrid = pManager->GetGrid();
 	Output* pOut = pGrid->GetOutput();
 	Input* pIn = pGrid->GetInput();
@@ -21,7 +22,7 @@ void DeleteGameObjectAction::Execute()
 
 	pGrid->RemoveObjectFromCell(Pos);
 	pOut->DrawCell(Pos);
-	pOut->ClearStatusBar();
+	
 }
 DeleteGameObjectAction::~DeleteGameObjectAction()
 {

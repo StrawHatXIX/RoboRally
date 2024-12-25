@@ -71,7 +71,7 @@ public:
 	bool AntennaOnGrid() const; //checks if the grid alread has an antenna, I used it in antenna action
 	bool AnyBeltOverlap(Belt* pBelt) const;
 	int GetNumPlayers() const; //this function returns number o players and NOT the PlayerList, used in laser.h
-
+	GameObject* GetGameObjectGrid(CellPosition* Pos);
 	// ========= Other Getters =========
 
 	Player* GetPlayer(int playerNum) const;	// Gets a Pointer to the Current Player   
