@@ -174,6 +174,13 @@ void RotatingGear::Save(ofstream& outfile, int Count, int* Locations_1, int* Loc
 	}
 }
 
+//GameObject* RotatingGear::Load(const CellPosition& pos, bool isClockwise, std::ifstream& infile)
+//{
+//	// Example: If no extra parameters are needed apart from isClockwise
+//	return new RotatingGear(pos,0);
+//}
+
+
 RotatingGear::~RotatingGear()
 {
 }

@@ -184,6 +184,7 @@
     <ClCompile Include="DangerZone.cpp" />
     <ClCompile Include="DeleteGameObjectAction.cpp" />
     <ClCompile Include="ExecuteCommandAction.cpp" />
+    <ClCompile Include="ExitAction.cpp" />
     <ClCompile Include="Flag.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Grid.cpp" />
@@ -247,6 +248,7 @@
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="DeleteGameObjectAction.h" />
     <ClInclude Include="ExecuteCommandAction.h" />
+    <ClInclude Include="ExitAction.h" />
     <ClInclude Include="Flag.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Grid.h" />

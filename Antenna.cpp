@@ -63,6 +63,13 @@ void Antenna::Save(ofstream& outfile, int Count, int* Locations_1, int* Location
     outfile << Count << endl << Locations_1[Count - 1] << endl;
 }
 
+GameObject* Antenna::Load(const CellPosition& pos, std::ifstream& infile)
+{
+    // No additional data is required for an Antenna
+    return new Antenna(pos);
+}
+
+
 Antenna::~Antenna()
 {
 }

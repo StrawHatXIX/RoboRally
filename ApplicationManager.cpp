@@ -14,6 +14,8 @@
 #include "PasteGameObjectAction.h"
 #include "DeleteGameObjectAction.h"
 #include "ToPlayModeAction.h"
+#include "ExitAction.h"
+#include "LoadGridAction.h"
 
 #include "ToDesignModeAction.h" //game mode buttons
 
@@ -236,12 +238,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		break;
 
 
-		//	ITM_Load_Open_Grid,
-		//	ITM_EXIT,
+	case ITM_Load_Open_Grid:
+		pAct = new LoadGridAction(this);
+		break;
 
-
-
-	case EXIT:
+	case ITM_EXIT:
+		pAct = new ExitAction(this);
 		break;
 
 

@@ -150,6 +150,13 @@ int Grid::GetCurrPlayer()
 	return currPlayerNumber;
 }
 
+GameObject* Grid::GetGameObjectGrid(CellPosition* Pos) 
+{
+	if (Pos->IsValidCell())
+	{
+		return CellList[Pos->VCell()][Pos->HCell()]->GetGameObject();
+	}
+}
 
 // ========= Other Getters =========
 
@@ -551,68 +558,74 @@ void Grid::SaveAll(ofstream& outfile, Type X)
 
 void Grid::LoadAll(std::ifstream& infile, Type X)
 {
-	int Count;
-	infile >> Count;
+	//int Count;
+	//infile >> Count;
 
-	int Locations_1[55];
-	int Locations_2[55];
+	//int Locations_1[55];
+	//int Locations_2[55];
 
-	for (int i = 0; i < Count; ++i)
-	{
-		infile >> Locations_1[i];
-	}
+	//// Read positions for the first location set
+	//for (int i = 0; i < Count; ++i)
+	//{
+	//	infile >> Locations_1[i];
+	//}
 
-	if (X == BeltType || X == RotatingGearType)
-	{
-		for (int i = 0; i < Count; ++i)
-		{
-			infile >> Locations_2[i];
-		}
-	}
+	//// Read positions for the second location set (if applicable)
+	//if (X == BeltType || X == RotatingGearType)
+	//{
+	//	for (int i = 0; i < Count; ++i)
+	//	{
+	//		infile >> Locations_2[i];
+	//	}
+	//}
 
-	for (int i = 0; i < Count; ++i)
-	{
-		int cellNum = Locations_1[i];
-		CellPosition pos = CellPosition::GetCellPositionFromNum(cellNum);
-		GameObject* obj = nullptr;
-		int endCellNum = 0;
-		CellPosition endPos;
-		Belt* belt;
+	//// Loop through and load the game objects
+	//for (int i = 0; i < Count; ++i)
+	//{
+	//	int cellNum = Locations_1[i];
+	//	CellPosition pos = CellPosition::GetCellPositionFromNum(cellNum);
+	//	GameObject* obj = nullptr;
 
-		switch (X)
-		{
-		case FlagType:
-			obj = new Flag(pos);
-			break;
-		case AntennaType:
-			obj = new Antenna(pos);
-			break;
-		case WaterPitType:
-			obj = new WaterPit(pos);
-			break;
-		case DangerZoneType:
-			obj = new DangerZone(pos);
-			break;
-		case WorkshopType:
-			obj = new Workshop(pos);
-			break;
-		case BeltType:
-			endCellNum = Locations_2[i];
-			endPos = CellPosition::GetCellPositionFromNum(endCellNum);
-			belt = new Belt(pos, endPos);
-			obj = belt;
-			break;
-		case RotatingGearType:
-			bool isClockwise = Locations_2[i] == 1;
-			RotatingGear* gear = new RotatingGear(pos, isClockwise);
-			obj = gear;
-			break;
-		}
+	//	// Delegate object creation to the static Load function
+	//	switch (X)
+	//	{
+	//	case FlagType:
+	//		obj = Load(pos, infile);
+	//		break;
+	//	case AntennaType:
+	//		obj = Antenna::Load(pos, infile);
+	//		break;
+	//	case WaterPitType:
+	//		obj = WaterPit::Load(pos, infile);
+	//		break;
+	//	case DangerZoneType:
+	//		obj = DangerZone::Load(pos, infile);
+	//		break;
+	//	case WorkshopType:
+	//		obj = Workshop::Load(pos, infile);
+	//		break;
+	//	case BeltType:
+	//	{
+	//		int endCellNum = Locations_2[i];
+	//		CellPosition endPos = CellPosition::GetCellPositionFromNum(endCellNum);
+	//		obj = Belt::Load(pos, endPos, infile);
+	//		break;
+	//	}
+	//	case RotatingGearType:
+	//	{
+	//		bool isClockwise = Locations_2[i] == 1;
+	//		obj = RotatingGear::Load(pos, isClockwise, infile);
+	//		break;
+	//	}
+	//	default:
+	//		break;
+	//	}
 
-
-		CellList[pos.VCell()][pos.HCell()]->SetGameObject(obj);
-	}
+	//	// Set the loaded object in the cell
+	//	CellList[pos.VCell()][pos.HCell()]->SetGameObject(obj);
+	//}
 }
+
 
 void Grid::ResetGrid()
 {
