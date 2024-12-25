@@ -99,6 +99,11 @@ Direction Player::GetDirection() const
 	return this->currDirection;
 }
 
+void Player::SetDirection(Direction dir)
+{
+	this->currDirection = dir;
+}
+
 int Player::GetplayerNum() const
 {
 	return this->playerNum;

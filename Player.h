@@ -49,6 +49,7 @@ public:
 	void SetHealth(int h);			// A setter for the health points
 	int GetHealth();				// A getter for the health points
 
+	void SetDirection(Direction dir);
 
 	// carried laser type (default, double laser)
 
